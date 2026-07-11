@@ -27,9 +27,28 @@ if (sain == 5.5){
     }
 }
 
-let sandhaya = 20;
-if (sandhaya == 10){
-    console.log("sandhya is 10");
+let priceOfChocolate = 2;
+let hasAmount = 5;
+const canBuy = hasAmount>=priceOfChocolate;
+if(canBuy){
+    console.log("Enjoy your chocolate");
+}else{
+    console.log("have some money bitch");
 }
-else if( sandhaya == 15)
-    console.log
+
+let job = "Software Developer";
+
+switch (job){
+    case 'Software Engineer':
+        console.log("builds programs that develop software");
+        break;
+    case 'Software Developer':
+        console.log("that builds software");
+        break;
+    case 'software programmer':
+        console.log("that program software");
+        break;
+    default:
+        console.log("bhak bhenchod"); 
+}
+

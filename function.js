@@ -108,3 +108,40 @@ function factorial(f){
     return f * factorial(f-1);
 }
 console.log(factorial(5));
+
+//higher-order function either takes another function as parameter or returns another function.(map,filter,reduce)
+function applyOperation(a,b,operation){
+    return operation(a,b);
+}
+function add( z,y){
+    return z + y;
+
+}
+console.log(applyOperation(2,3,add));
+//applyOperation() is a higher-order function because it accepts another function add as an argument
+// the passed function is executed inside applyOperation()
+
+//Nested function is other functions and they have access to the variables of their parent function
+function outerFun(a){
+    function innerFun(b){
+        return a + b;
+    }
+    return innerFun;
+}
+const addNum = outerFun(10);
+console.log(addNum(29));
+
+//pure function returns the same output for the same inputs and do not produce side effects they do not modify statees
+// outside their scope such as modifying global variables ,
+//changing the state of objects passed as arguments or performing i/o operations
+function pureAdd(a,b){
+    return a+b;
+
+}
+console.log(pureAdd(2,3));
+
+//rest parameter function uses the syntax to collect remaining arguments into an array useful when the number of arguments is unknown
+function ktaHaru(...add){
+    return add.reduce((a,b) => a+b,0);
+}
+console.log(ktaHaru(1,23,4,5,5,33,333));

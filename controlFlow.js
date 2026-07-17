@@ -106,3 +106,49 @@ console.log(discountCalculator(3000,true));
 console.log(discountCalculator(3000,false));
 console.log(discountCalculator(500,true));
 
+
+/* Discount Calculator
+Write calculateDiscount(match, isMembership) where:
+match > 20  and member → 7 bonus match
+match > 20  and !member → 3 bonus match
+match > 10  and  member → 3 off
+match > 10  and  !member → 1 off
+match > 10 NPR (any) → 1 off
+Else → no discount Use if...else if chains. 
+This is the classic e-commerce pricing logic interviewers love asking.
+ */
+function futsalDiscount(match,isMembership){
+    let discount = 0;
+    let matchAmount = 2000;
+    if(match >= 20 && isMembership ){
+        discount = 7;
+    }else if(match >= 20 && !isMembership){
+        discount = 3;
+
+    }else if(match >= 10 && isMembership){
+        discount = 3;
+
+
+    }else if(match >= 10 && !isMembership){
+        discount = 2;
+    }else{
+        discount = 0;
+    }
+
+    const TotalMatchDiscount = (matchAmount * discount);
+    const finalDiscount = TotalMatchDiscount
+
+    return{
+        discount,
+        TotalMatchDiscount,
+        finalDiscount
+    };
+}
+console.log("\nTotal futsal match and discount");
+console.log("Total Match Discount",futsalDiscount(30,true));
+console.log(futsalDiscount(10,true));
+console.log(futsalDiscount(20,false));
+console.log(futsalDiscount(10,true));
+console.log(futsalDiscount(10,false));
+
+

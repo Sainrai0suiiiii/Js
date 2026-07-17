@@ -151,4 +151,31 @@ console.log(futsalDiscount(20,false));
 console.log(futsalDiscount(10,true));
 console.log(futsalDiscount(10,false));
 
+function giveMeWeed(gTotal,isFriend){
+    let off = 0;
+    if (gTotal >= 500 && isFriend){
+        off = 50;
+    }else if(gTotal >= 500 && !isFriend){
+        off = 20;
+    }else if (gTotal >= 100){
+        off = 0;
+    }
+
+    const fTotal = (gTotal*off)/100;
+    const fall = gTotal - fTotal;
+
+    return{
+        gTotal,
+        fTotal,
+        fall
+    };
+}
+console.log("\nweed break!!");
+console.log(giveMeWeed(600,false));
+console.log(giveMeWeed(500,true));
+console.log(giveMeWeed(500,false));
+console.log(giveMeWeed(100,true));
+
+
+
 

@@ -30,7 +30,7 @@ function simulateLoginAttempts(){
 simulateLoginAttempts();
 
 function lamuteAttempts(){
-    const kosis = [true,false, false, true, true, true,false, false, false, true ]
+    const kosis = [true,false,false,false, false, true, true, true,false, false, false, true ]
     let hawakosis = 0;
 
     for ( i =0; i < kosis.length; i++){
@@ -40,6 +40,10 @@ function lamuteAttempts(){
         }else {
             hawakosis++;
             console.log('kosis bekar');
+        }
+        if ( hawakosis >= 5){
+            console.log("Account blocked");
+            break;
         }
     }
 }

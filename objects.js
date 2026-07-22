@@ -84,3 +84,86 @@ const checkoutDetails = processCheckout(shoppingCart);
 
 //displaying the result
 console.log(checkoutDetails.summaryText);
+
+
+// objects
+/*
+Objects is a dynamic data structure that stores related data as key-value pairs.
+1.Creation using object literal
+2.creation using new object() constructor
+*/
+
+// creation using object literals
+let obj = {
+    name : "Sain Rai",
+    age : 25,
+    job : "Developer"
+};
+console.log(obj);
+
+let sain ={
+    age: 25,
+    height : 5.5,
+    weight : 70,
+    address : "Pathari-Sanischare",
+    FathersName : "Lal Bahadur Rai",
+    Profession : "Data Scientist",
+    Hobby: "Football,Riding Sandhay,Roaming with Sandhya"
+
+
+};
+console.log(sain);
+
+let Rai = {
+    Clan : "Haribung",
+    SubClan : "Kulung",
+    History : 5000
+
+};
+console.log(Rai);
+
+// creation Using new Object () Constructor
+let obj1 = new Object();
+obj1.name = "Sain Rai",
+obj1.age = 25,
+obj1.job ="Developer"
+
+console.log(obj1);
+
+let hero = new Object();
+hero.name = "Sain Rai",
+hero.LastName = "kulung",
+hero.kale = 12
+
+console.log(hero);
+
+//using . notation:
+console.log(hero.name);
+console.log(hero.kale);
+
+//using brackcet notation :
+console.log (obj1['job']);
+console.log(Rai.Clan);
+console.log(Rai["SubClan"]);
+console.log(sain.FathersName);
+console.log(sain['Hobby']);
+
+// adding properties to an object:
+obj1.married = true;
+console.log(obj1);
+Rai.location = 'MAHA KULUNG';
+console.log(Rai);
+sain.collage = "Softwarica";
+console.log(sain);
+obj.School = "Nepal Police School";
+obj.Adress = "Pathari";
+console.log(obj);
+
+//Removing Properties From an Object
+delete obj.age;
+delete sain.collage;
+delete Rai.History;
+delete obj1.height;
+
+//Checking if a Property Exists:
+

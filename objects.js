@@ -167,3 +167,28 @@ delete obj1.height;
 
 //Checking if a Property Exists:
 
+// 1. Using the 'in' operator (checks own + inherited properties)
+console.log("--- Checking Property Existence ---");
+console.log("'name' in obj:", 'name' in obj);        // true (still exists)
+console.log("'age' in obj:", 'age' in obj);          // false (was deleted)
+console.log("'toString' in obj:", 'toString' in obj); // true (inherited from prototype)
+
+// 2. Using .hasOwnProperty() (checks only own properties, not inherited)
+console.log("\n--- Using hasOwnProperty() ---");
+console.log("obj.hasOwnProperty('School'):", obj.hasOwnProperty('School'));   // true
+console.log("obj.hasOwnProperty('toString'):", obj.hasOwnProperty('toString')); // false
+console.log("sain.hasOwnProperty('Hobby'):", sain.hasOwnProperty('Hobby'));   // true
+console.log("sain.hasOwnProperty('collage'):", sain.hasOwnProperty('collage')); // false (was deleted)
+
+// 3. Using Object.hasOwn() (modern ES2022+ approach, safer alternative)
+console.log("\n--- Using Object.hasOwn() ---");
+console.log("Object.hasOwn(obj, 'name'):", Object.hasOwn(obj, 'name'));       // true
+console.log("Object.hasOwn(Rai, 'Clan'):", Object.hasOwn(Rai, 'Clan'));       // true
+console.log("Object.hasOwn(Rai, 'History'):", Object.hasOwn(Rai, 'History')); // false (was deleted)
+
+// 4. Using strict inequality check against undefined
+console.log("\n--- Using undefined check ---");
+console.log("obj.School !== undefined:", obj.School !== undefined);   // true
+console.log("obj.age !== undefined:", obj.age !== undefined);         // false (deleted)
+console.log("hero.LastName !== undefined:", hero.LastName !== undefined); // true
+
